@@ -14,7 +14,7 @@ st.set_page_config(
 SHEET_ID = "1Ka7EbFA8aeCHfZb_YTWMjDT3Z7n8a9JUPUUqhIEC068"
 LOGIN_GID = "2140068884"
 
-# 📌 Inserisci qui i GID corretti per ciascun mese (presi dall'URL del foglio Google)
+# Mappatura delle sezioni con i rispettivi GID dei fogli
 SECTIONS_GIDS = {
     "Lista della spesa": "1311166810",
     "Gennaio": "620769078",
@@ -378,6 +378,7 @@ if selected_section == "Lista della spesa":
         edited_df = st.data_editor(
             df_dati,
             use_container_width=True,
+            hide_index=True,
             height=num_righe_visibili * 35 + 40,
             key=f"editor_{selected_section}",
         )
@@ -433,6 +434,7 @@ else:
             df_entrate,
             disabled=col_bloc_entrate,
             use_container_width=True,
+            hide_index=True,
             height=len(df_entrate) * 35 + 40,
             key=f"editor_entrate_{selected_section}",
         )
@@ -464,6 +466,7 @@ else:
             df_spese_fisse,
             disabled=col_bloc_spese_fisse,
             use_container_width=True,
+            hide_index=True,
             height=len(df_spese_fisse) * 35 + 40,
             key=f"editor_spese_fisse_{selected_section}",
         )
@@ -495,6 +498,7 @@ else:
             df_spese_var,
             disabled=col_bloc_spese_var,
             use_container_width=True,
+            hide_index=True,
             height=len(df_spese_var) * 35 + 40,
             key=f"editor_spese_var_{selected_section}",
         )
@@ -526,6 +530,7 @@ else:
             df_debiti,
             disabled=col_bloc_debiti,
             use_container_width=True,
+            hide_index=True,
             height=len(df_debiti) * 35 + 40,
             key=f"editor_debiti_{selected_section}",
         )
